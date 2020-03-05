@@ -20,7 +20,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "spm-test-dependecies",
-            dependencies: []),
+            dependencies: [],
+            swiftSettings: [
+                .unsafeFlags(["-F."])
+        ]),
         .testTarget(
             name: "spm-test-dependeciesTests",
             dependencies: ["spm-test-dependecies"]),
